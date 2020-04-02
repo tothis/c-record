@@ -15,6 +15,7 @@ set(CMAKE_C_STANDARD 11)
 add_executable(c-record main.c)
 add_executable(multiply multiply/main.c)
 add_executable(http http/main.c)
+add_executable(num-convert num-convert/main.c)
 
 add_executable(server http/server.c)
 # 将通过add_executable()或add_library()指令生成的目标文件与库文件进行链接
