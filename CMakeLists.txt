@@ -13,7 +13,6 @@ set(CMAKE_C_STANDARD 11)
 
 # 生成可执行文件
 add_executable(c-record main.c)
-add_executable(multiply multiply/main.c)
 add_executable(http http/main.c)
 add_executable(num-convert num-convert/main.c)
 
