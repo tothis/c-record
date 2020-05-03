@@ -49,4 +49,7 @@ int main() {
 
     printf("%#x %s \n", zero, "zero"); // zero变量地址
     printf("%#x %s \n", zero(), "zero()"); // 执行zero函数
+
+    // 暂停 等待用户信号 否则控制台一闪即过 来不及看到执行结果
+    system("pause");
 }

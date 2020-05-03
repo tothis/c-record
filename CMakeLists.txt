@@ -14,9 +14,10 @@ set(CMAKE_C_STANDARD 11)
 # 生成可执行文件
 add_executable(c-record main.c)
 
-add_executable(pointer base/pointer.c)
-add_executable(head base/number.c base/head.c)
-add_executable(macro base/macro.c)
+add_executable(base-pointer base/pointer.c)
+add_executable(base-head base/number.c base/head.c)
+add_executable(base-macro base/macro.c)
+add_executable(base-scanf base/scanf.c)
 
 add_executable(http http/main.c)
 add_executable(num-convert num-convert/main.c)
