@@ -7,6 +7,7 @@
 /* 依赖库 */
 #include <stdlib.h>
 #include <time.h>
+#include <unistd.h>
 
 // 随机数
 int random(void);

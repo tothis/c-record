@@ -1,5 +1,8 @@
 #include <stdio.h>
 #include <windows.h>
+#include "../common/out.c"
+
+#define SIZE 4
 
 int message(char *content, char *title) {
     MessageBox(0, content, title, 0);
@@ -10,22 +13,29 @@ int *zero() {
     return 0;
 }
 
+int *copy(int source[], int target[], int size) {
+    for (int i = 0; i < size; i++)
+        target[i] = source[i];
+    return target;
+}
+
 int main() {
     /*
      * c中变量 常量 函数等数据 载入内存后 都拥有唯一编号 即指针
      * 函数调用 参数传递为值传递 在函数中修改参数时 需通过参数的指针操作
      * 指针通过十六进制数映射内存地址
      *
-     * 指针在未赋值时 指针随机指向一个数据 可能为系统数据 修改后可能会导致系统问题
+     * 指针变量在未赋值时 指针变量随机指向一个数据 可能为系统数据 修改后可能会导致系统问题
      * 如int *p; *p=10;
+     *
+     * 指针变量定义后必须初始化 且值为一个地址 不可赋值为其他类型数据
      *
      * int a = 0;
      * a表示数据 &a表示数据指针
      * int *b = &a;
      * *b代表b中数据(a数据地址)对应的数据 访问*b等于访问a
-     * 使用 `*test` 定义指针变量 要求 `test` 对应数据为其它数据地址
-     * 数组本质为指针 即 `*a` 等同于 `a[]`
-    */
+     * 数组本质为指针 函数传参时`int *a`等同`int a[]`
+     */
     int a = 0; // 赋值
     int *b = &a; // 定义指针 b为保存变量a的地址
 
@@ -45,11 +55,18 @@ int main() {
     // 函数指针
     // 函数返回值类型 函数指针名称 函数参数列表
     int (*fun)(char *a, char *b) = message;
-    fun("内容", "标题");
+    // fun("内容", "标题");
 
     printf("%#x %s \n", zero, "zero"); // zero变量地址
     printf("%#x %s \n", zero(), "zero()"); // 执行zero函数
 
+    int a1[SIZE] = {1, 2, 3, 4};
+    int a2[SIZE];
+    int *a3;
+    a3 = copy(a1, a2, SIZE);
+    outInt(a2, SIZE); // 1,2,3,4
+    outInt(a3, SIZE); // 1,2,3,4
+
     // 暂停 等待用户信号 否则控制台一闪即过 来不及看到执行结果
-    system("pause");
+    // system("pause");
 }

@@ -12,14 +12,13 @@ set(CMAKE_C_STANDARD 11)
 # set(LIBRARY_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/out/lib)
 
 # 生成可执行文件
-add_executable(c-record main.c)
-
 add_executable(base-pointer base/pointer.c)
 add_executable(base-head base/number.c base/head.c)
 add_executable(base-macro base/macro.c)
 add_executable(base-scanf base/scanf.c)
+add_executable(base-goto base/goto.c)
+add_executable(base-math base/math.c)
 
-add_executable(http http/main.c)
 add_executable(num-convert num-convert/main.c)
 
 add_executable(server http/server.c)

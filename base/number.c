@@ -1,4 +1,3 @@
-#include <unistd.h>
 #include "number.h"
 
 // 随机数
