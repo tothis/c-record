@@ -18,6 +18,7 @@ add_executable(base-macro base/macro.c)
 add_executable(base-scanf base/scanf.c)
 add_executable(base-goto base/goto.c)
 add_executable(base-math base/math.c)
+add_executable(base-struct lib/cJSON/cJSON.c base/struct.c)
 
 add_executable(num-convert num-convert/main.c)
 
